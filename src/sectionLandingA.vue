@@ -50,7 +50,6 @@ export default {
     },
     created() {
         this.section.data = this.section.data || {}
-        // this.section.data = {"isNew":false,"title":{"data":{"popup":null},"font":"","link":"","size":"text-big","text":{"fr_FR":"Welcome To Your Fabulous Website"},"type":"text","zoom":-1,"align":"","class":["ww-animspeed-normal","ww-anim-fade-top-bounce"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":null,"borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.06710339192416104},"button":{"data":{"popup":null},"font":"","link":"section://1035","size":"","text":{"fr_FR":"Start Now !"},"type":"text","zoom":-1,"align":"","class":["ww-class-btn-bg-none","ww-class-btn-padding-small","ww-class-btn-border-small","ww-class-btn-format-round-small","ww-anim-fade","ww-class-font-size-small"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"#FFFFFF","borderColor":"#FFFFFF","backgroundColor":"#FFFFFF"},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.7809282019898562},"logoBig":{"data":{"popup":null},"font":"","link":null,"size":"","text":{"fr_FR":""},"type":"text","zoom":0.436374624713393,"align":"","class":["ww-anim-fade","ww-animspeed-slow"],"image":"https://wewebprod.s3-eu-west-1.amazonaws.com/designs/46/sections/1VnU4mJYqI0QOzZqLNBJbJs2UY3L0VRJ.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":-1.9373391779708982e-14,"y":0.5655042575474689},"uniqueId":0.8381540437461199},"subtitle":{"data":{"popup":null},"font":"sans-serif","link":"","size":"text-small","text":{"fr_FR":"This section is called a \"landing page\". It is the first page seen by your visitors.<br>A large picture, impactful text, your logo at the top (optional) and a call to action button at the bottom (recommended!).<br><br>Hit the pen to start editing.<br>"},"type":"text","zoom":-1,"align":"center","class":["ww-anim-fade","ww-animspeed-normal"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.7936393689745822},"subtitle2":{"data":{"popup":null},"font":"","link":"","size":"","text":{"fr_FR":""},"type":"text","zoom":-1,"align":"","class":[],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.4431173787051501},"background":{"data":{"popup":null},"font":"","link":null,"size":"","text":{"fr_FR":""},"type":"text","zoom":-1,"align":"","class":["ww-class-img-filter-uni-big"],"image":"https://wewebprod.s3-eu-west-1.amazonaws.com/designs/46/sections/3eHa5RHVGPCNovdVTJuDlmz6tVwsXGTU.jpg","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.34482088449480486},"titleStyle":{"size":"text-xbig"},"sectionTitle":"landing","subtitleStyle":{"size":"text-small"}};
 
         if (!this.section.data.background)
             this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color' });
@@ -59,13 +58,13 @@ export default {
             this.section.data.logoBig = wwLib.wwObject.getDefault({ type: 'ww-image' });
 
         if (!this.section.data.title)
-            this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'black' } });
 
         if (!this.section.data.subtitle)
-            this.section.data.subtitle = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.subtitle = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'black' } });
 
         if (!this.section.data.subtitle2)
-            this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'black' } });
 
         if (!this.section.data.button)
             this.section.data.button = wwLib.wwObject.getDefault({ type: 'ww-button' });
@@ -80,7 +79,7 @@ export default {
 .landing_A {
     position: relative;
     flex-basis: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .landing_A.container-fluid {
