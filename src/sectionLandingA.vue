@@ -7,7 +7,6 @@
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
         
         <div class="container-fluid">
-
             <div class="row">
                 <div class="logo-big-container">
                     <wwObject v-bind:ww-object="section.data.logoBig"></wwObject>
@@ -29,8 +28,8 @@
                     <wwObject v-bind:ww-object="section.data.button"></wwObject>
                 </div>
             </div>
-
         </div>
+
     </div>
 </template>
 
@@ -50,25 +49,29 @@ export default {
     },
     created() {
         this.section.data = this.section.data || {}
-
-        if (!this.section.data.background)
-            this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color' });
-
-        if (!this.section.data.logoBig)
+        
+        if (!this.section.data.background) {
+            this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-image', 
+                data: {
+                    url: 'http://cdn.wewebapp.io/public/images/weweb-wp.png'
+                }
+            });
+        }
+        if (!this.section.data.logoBig) {
             this.section.data.logoBig = wwLib.wwObject.getDefault({ type: 'ww-image' });
-
-        if (!this.section.data.title)
-            this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'black' } });
-
-        if (!this.section.data.subtitle)
-            this.section.data.subtitle = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'black' } });
-
-        if (!this.section.data.subtitle2)
-            this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'black' } });
-
-        if (!this.section.data.button)
+        }
+        if (!this.section.data.title) {
+            this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
+        }
+        if (!this.section.data.subtitle) {
+            this.section.data.subtitle = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
+        }
+        if (!this.section.data.subtitle2) {
+            this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
+        }
+        if (!this.section.data.button) {
             this.section.data.button = wwLib.wwObject.getDefault({ type: 'ww-button' });
-
+        }
         this.sectionCtrl.update(this.section);
     },
     methods: {}
@@ -82,7 +85,7 @@ export default {
     overflow: hidden;
 }
 
-.landing_A.container-fluid {
+.landing_A .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -99,6 +102,14 @@ export default {
 
 .landing_A .logo-big-container {
     margin-top: 50px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .landing_A .title {
@@ -225,5 +236,4 @@ export default {
         margin-left: 25%;
     }
 }
-
 </style>
