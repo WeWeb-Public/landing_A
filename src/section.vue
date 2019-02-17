@@ -3,39 +3,32 @@
         <!-- wwManager:start -->
         <wwSectionEditMenu v-bind:sectionCtrl="sectionCtrl"></wwSectionEditMenu>
         <!-- wwManager:end -->
-
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
-        
         <div class="container-fluid">
             <div class="row">
                 <div class="logo-big-container">
                     <wwObject v-bind:ww-object="section.data.logoBig"></wwObject>
                 </div>
-
                 <h1 class="title block">
                     <wwObject v-bind:ww-object="section.data.title"></wwObject>
                 </h1>
-
                 <h2 class="subtitle block">
                     <wwObject v-bind:ww-object="section.data.subtitle"></wwObject>
                 </h2>
-
                 <h3 class="subtitle block">
                     <wwObject v-bind:ww-object="section.data.subtitle2"></wwObject>
                 </h3>
-
                 <div class="button-container block">
                     <wwObject v-bind:ww-object="section.data.button"></wwObject>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
 export default {
-    name: "landing_A",
+    name: "__COMPONENT_NAME__",
     props: {
         sectionCtrl: Object
     },
@@ -181,18 +174,6 @@ export default {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .landing_A .navigation {
-        display: none;
-    }
-    .landing_A>.edit-image-button {
-        right: 60px !important;
-    }
-    .landing_A .title {
-        margin-top: 15%;
-    }
-}
-
 .landing_A .section-edit {
     top: 5px !important;
 }
@@ -219,7 +200,16 @@ export default {
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+    .landing_A .navigation {
+        display: none;
+    }
+    .landing_A>.edit-image-button {
+        right: 60px !important;
+    }
+    .landing_A .title {
+        margin-top: 15%;
+    }
     .landing_A .logo-big-container {
         -ms-flex: 0 0 66.666666%;
         flex: 0 0 66.666666%;
@@ -228,7 +218,7 @@ export default {
     }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 992px) {
     .landing_A .logo-big-container {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
