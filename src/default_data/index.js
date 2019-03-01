@@ -2,10 +2,10 @@ module.exports = [
     {
         name: 'landing_A',
         storeName: {
-            en_GB: "landing_A"
+            en: "landing_A"
         },
         storeDesc: {
-            en_GB: ""
+            en: ""
         }
     }
 ]
